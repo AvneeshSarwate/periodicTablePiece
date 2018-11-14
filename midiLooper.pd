@@ -1,4 +1,4 @@
-#N canvas 572 312 1277 531 10;
+#N canvas 515 220 1277 531 10;
 #X obj 519 342 cyclone/midiparse;
 #X obj 548 172 tgl 22 0 empty empty empty 17 7 0 10 -216373 -66577
 -1 0 1;
@@ -162,9 +162,11 @@ clock tick;
 #X text 293 185 BPM;
 #X msg 453 202 read seq2.mid;
 #X text 46 214 can add delay here to control phase, f 19;
-#X text 91 332 trigger line object on every beat of a link~ metronome
-to generate ticks. Change line grain upon link time change. How to
-align midi file phase to link tho? Can use conductor signal to force
+#X text 102 301 Trigger line object on every beat of a link~ metronome
+to generate ticks. Control the grain and number of events generated
+from the line object to control speed relative to the tempo from the
+link~ object. Change line grain/num-steps upon link time change. How
+to align midi file phase to link tho? Can use conductor signal to force
 a seq "start" from file start \, but the delays of the performers will
 stop them from being at the same phase. You should be able to bring
 the delay down to 0 \, and then all of the things will be in phase
