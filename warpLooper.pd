@@ -1,39 +1,39 @@
-#N canvas 515 220 1277 531 10;
-#X obj 519 342 cyclone/midiparse;
-#X obj 548 172 tgl 22 0 empty empty empty 17 7 0 10 -216373 -66577
+#N canvas 321 167 1517 930 10;
+#X obj 589 397 cyclone/midiparse;
+#X obj 618 227 tgl 22 0 empty empty empty 17 7 0 10 -216373 -66577
 -1 0 1;
-#X msg 555 239 stop;
-#X text 578 174 play/stop;
-#X obj 519 314 cyclone/midiflush;
-#X msg 629 272 bang;
-#X text 663 267 flush hanging;
-#X text 665 281 MIDI notes;
-#X obj 874 319 cyclone/seq;
-#X msg 891 257 record;
-#X obj 874 220 midiin;
-#X obj 1018 197 notein;
-#X obj 1018 247 cyclone/midiformat;
-#X obj 1018 221 pack;
-#X obj 1018 327 cyclone/seq;
-#X msg 901 288 play;
-#X obj 548 204 select 1 0;
-#X obj 453 177 loadbang;
-#X msg 629 235 read;
-#X text 635 215 open another;
-#X text 665 236 file;
-#X msg 831 259 write;
-#X text 800 44 You can directly record from raw MIDI data with [midiin].
+#X msg 625 294 stop;
+#X text 648 229 play/stop;
+#X obj 589 369 cyclone/midiflush;
+#X msg 699 327 bang;
+#X text 733 322 flush hanging;
+#X text 735 336 MIDI notes;
+#X obj 944 374 cyclone/seq;
+#X msg 961 312 record;
+#X obj 944 275 midiin;
+#X obj 1088 252 notein;
+#X obj 1088 302 cyclone/midiformat;
+#X obj 1088 276 pack;
+#X obj 1088 382 cyclone/seq;
+#X msg 971 343 play;
+#X obj 618 259 select 1 0;
+#X obj 523 232 loadbang;
+#X msg 699 290 read;
+#X text 705 270 open another;
+#X text 735 291 file;
+#X msg 901 314 write;
+#X text 870 99 You can directly record from raw MIDI data with [midiin].
 Use the 'record' message to start recodring \, you don't need the stop
 message to switch from recording and playing.;
-#X text 802 139 You can record from specialized MIDI objects such as
+#X text 872 194 You can record from specialized MIDI objects such as
 [notein] using the [midiformat] object to convert the messages to raw
 MIDI.;
-#X msg 1048 274 record;
-#X msg 1062 299 play;
-#X obj 874 419 cyclone/midiparse;
-#X obj 1017 418 cyclone/midiformat;
-#X obj 948 455 cyclone/midiflush;
-#X text 628 391 synthesizer;
+#X msg 1118 329 record;
+#X msg 1132 354 play;
+#X obj 944 474 cyclone/midiparse;
+#X obj 1087 473 cyclone/midiformat;
+#X obj 1018 510 cyclone/midiflush;
+#X text 698 446 synthesizer;
 #N canvas 638 210 345 266 polysynth 0;
 #X obj 65 20 inlet;
 #N canvas 667 245 370 323 synth 0;
@@ -124,44 +124,43 @@ MIDI.;
 #X connect 8 0 2 0;
 #X connect 8 1 2 1;
 #X connect 8 2 2 2;
-#X restore 519 375 pd polysynth;
-#X text 600 375 <= 3 voice polyphonic;
-#X text 810 368 Please check the help file of [midiparse] \, [midiformat]
+#X restore 589 430 pd polysynth;
+#X text 670 430 <= 3 voice polyphonic;
+#X text 880 423 Please check the help file of [midiparse] \, [midiformat]
 and [midiflush] \, which are useful with [seq].;
-#X text 409 44 Below \, we play and stop with a toggle. At the end
+#X text 479 99 Below \, we play and stop with a toggle. At the end
 of the file \, a bang out the 2nd outlet of [seq] makes it play again
 in a loop. When you stop it with the toggle \, it also flushes possible
 hanging MIDI notes (with [midiflush]). We use [midiparse] to send note
 messages to our synth.;
-#X text 801 100 Use 'write' to save to a MIDI file with the dialog
+#X text 871 155 Use 'write' to save to a MIDI file with the dialog
 box \, or use 'write <symbol>' to save to a specific file.;
-#X msg 415 245 delay 500;
-#X text 411 110 Use the 'read' message to open another file with the
+#X msg 485 300 delay 500;
+#X text 481 165 Use the 'read' message to open another file with the
 dialog box and 'read seq.mid' to re open the example. The 'delay' message
 adds a delay in ms before sending the fisrt event.;
-#X obj 519 274 cyclone/seq;
-#X msg 493 230 start -1;
-#X obj 173 198 metro;
-#X msg 170 245 tick;
-#X obj 173 175 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+#X obj 589 329 cyclone/seq;
+#X msg 563 285 start -1;
+#X obj 134 254 metro;
+#X msg 247 335 tick;
+#X obj 243 230 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
 1;
-#X obj 173 134 loadbang;
-#X obj 225 232 nbx 7 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 243 189 loadbang;
+#X obj 295 287 nbx 7 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 20.8333 256;
-#X obj 225 205 expr 60000 / ($f1 * 24);
-#X text 40 47 When you send it "start -1" \, it expects 'tick' messages
+#X obj 295 260 expr 60000 / ($f1 * 24);
+#X text 110 102 When you send it "start -1" \, it expects 'tick' messages
 as the clock \, so you can use it to vary the playback tempo or to
 synchronize with another clock (such as incoming MIDI Clock messages).
 24 clock ticks is a quarter note \, you can convert BPM to time per
 clock tick;
-#X text 300 225 tick time in ms, f 9;
-#X msg 225 165 120;
-#X obj 225 186 nbx 5 14 30 10000 0 0 empty empty empty 0 -8 0 10 -228856
+#X text 370 280 tick time in ms, f 9;
+#X msg 295 220 120;
+#X obj 295 241 nbx 5 14 30 10000 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 120 256;
-#X text 293 185 BPM;
-#X msg 453 202 read seq2.mid;
-#X text 46 214 can add delay here to control phase, f 19;
-#X text 102 301 Trigger line object on every beat of a link~ metronome
+#X text 363 240 BPM;
+#X msg 523 257 read seq2.mid;
+#X text 172 356 Trigger line object on every beat of a link~ metronome
 to generate ticks. Control the grain and number of events generated
 from the line object to control speed relative to the tempo from the
 link~ object. Change line grain/num-steps upon link time change. How
@@ -171,7 +170,39 @@ stop them from being at the same phase. You should be able to bring
 the delay down to 0 \, and then all of the things will be in phase
 (if changing the delay time doesn't clear the queue). If changing the
 delay does clear the queue \, look into building that., f 43;
-#X obj 499 412 dac~;
+#X obj 569 467 dac~;
+#X obj 172 313 pipe 2000;
+#X floatatom 233 289 5 0 0 0 - - -;
+#X text 102 241, f 19;
+#X msg 720 558 tempo \$1;
+#X msg 509 559 resolution \$1;
+#X msg 612 579 reset \$1 \$2;
+#X obj 612 558 pack f f;
+#X floatatom 619 677 5 0 0 1 beat_time - -;
+#X floatatom 582 695 5 0 0 1 phase - -;
+#X msg 441 668 \; pd dsp 1;
+#X floatatom 545 717 5 0 0 1 step - -;
+#X floatatom 656 656 5 0 0 1 tempo - -;
+#X obj 432 539 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 545 631 abl_link~ 1 0 4 134;
+#X floatatom 720 539 5 0 0 2 tempo - -;
+#X floatatom 657 539 5 0 0 2 quantum - -;
+#X floatatom 612 539 5 0 0 2 beat - -;
+#X floatatom 509 539 5 0 0 2 resolution - -;
+#X msg 432 559 connect \$1;
+#X floatatom 243 718 5 0 0 0 - - -;
+#X obj 243 696 r #abl_link_num_peers;
+#X obj 854 683 expr 1000./$f1;
+#X floatatom 819 735 5 0 0 0 - - -;
+#X obj 941 833 line 0;
+#X obj 1192 659 metro;
+#X obj 657 726 trigger bang bang bang;
+#X floatatom 764 760 5 0 0 0 - - -;
+#X obj 684 796 pack 24 200;
+#X floatatom 839 890 5 0 0 0 - - -;
+#X floatatom 813 798 5 0 0 0 - - -;
+#X obj 818 768 * 24;
 #X connect 0 0 30 0;
 #X connect 1 0 16 0;
 #X connect 2 0 37 0;
@@ -192,13 +223,13 @@ delay does clear the queue \, look into building that., f 43;
 #X connect 21 0 8 0;
 #X connect 24 0 14 0;
 #X connect 25 0 14 0;
-#X connect 30 0 53 0;
-#X connect 30 0 53 1;
+#X connect 30 0 52 0;
+#X connect 30 0 52 1;
 #X connect 35 0 37 0;
 #X connect 37 0 4 0;
 #X connect 37 1 38 0;
 #X connect 38 0 37 0;
-#X connect 39 0 40 0;
+#X connect 39 0 53 0;
 #X connect 40 0 37 0;
 #X connect 41 0 39 0;
 #X connect 42 0 41 0;
@@ -208,3 +239,33 @@ delay does clear the queue \, look into building that., f 43;
 #X connect 47 0 48 0;
 #X connect 48 0 44 0;
 #X connect 50 0 37 0;
+#X connect 53 0 40 0;
+#X connect 54 0 53 1;
+#X connect 56 0 66 0;
+#X connect 57 0 66 0;
+#X connect 58 0 66 0;
+#X connect 59 0 58 0;
+#X connect 63 0 78 0;
+#X connect 65 0 71 0;
+#X connect 66 0 63 0;
+#X connect 66 1 61 0;
+#X connect 66 2 60 0;
+#X connect 66 3 64 0;
+#X connect 66 3 74 0;
+#X connect 67 0 56 0;
+#X connect 68 0 59 1;
+#X connect 69 0 59 0;
+#X connect 70 0 57 0;
+#X connect 71 0 66 0;
+#X connect 73 0 72 0;
+#X connect 74 0 75 0;
+#X connect 74 0 76 2;
+#X connect 75 0 83 0;
+#X connect 76 0 81 0;
+#X connect 78 0 80 0;
+#X connect 78 1 79 0;
+#X connect 78 2 75 0;
+#X connect 79 0 76 0;
+#X connect 80 0 76 0;
+#X connect 83 0 80 1;
+#X connect 83 0 82 0;
