@@ -147,6 +147,22 @@
 #X obj 495 321 / 100;
 #X floatatom 613 287 5 0 0 0 - - -;
 #X floatatom 613 316 5 0 0 0 - - -;
+#X obj 700 648 ctlin;
+#X floatatom 618 702 5 0 0 0 - - -;
+#X floatatom 692 708 5 0 0 0 - - -;
+#X floatatom 769 709 5 0 0 0 - - -;
+#X obj 250 36;
+#X obj 250 36;
+#X obj 1014 86 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1016 117 trigger bang bang;
+#X obj 1115 147 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 987 160 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1016 142 pipe 200;
+#X msg 1115 171 0;
+#X msg 987 180 1;
 #X connect 0 0 14 0;
 #X connect 1 0 8 0;
 #X connect 2 0 17 0;
@@ -199,3 +215,14 @@
 #X connect 50 0 54 0;
 #X connect 51 0 52 0;
 #X connect 52 0 50 0;
+#X connect 55 0 56 0;
+#X connect 55 1 57 0;
+#X connect 55 2 58 0;
+#X connect 61 0 62 0;
+#X connect 62 0 65 0;
+#X connect 62 1 63 0;
+#X connect 63 0 66 0;
+#X connect 64 0 67 0;
+#X connect 65 0 64 0;
+#X connect 66 0 8 0;
+#X connect 67 0 8 0;
