@@ -46,7 +46,7 @@
 #X obj 485 26 inlet;
 #X obj 714 26 inlet;
 #X obj 1012 35 inlet;
-#X obj 1002 463 outlet~;
+#X obj 974 539 outlet~;
 #X obj 231 67 r step;
 #X obj 363 97 r tempo;
 #X obj 530 25 r speed\$1;
@@ -69,6 +69,11 @@
 #X floatatom 653 545 5 0 0 0 - - -;
 #X obj 671 476 r clearcounter;
 #X obj 1003 412 polysynth \$1;
+#X obj 1121 503 expr~ $v1 * (1-$f2/11);
+#X obj 982 500 expr~ $v1 * $f2/11;
+#X obj 1244 452 float \$1;
+#X obj 1249 416 loadbang;
+#X obj 1117 543 outlet~;
 #X connect 0 0 64 0;
 #X connect 1 0 8 0;
 #X connect 2 0 15 0;
@@ -131,4 +136,10 @@
 #X connect 60 0 34 0;
 #X connect 61 0 62 0;
 #X connect 63 0 61 2;
-#X connect 64 0 42 0;
+#X connect 64 0 66 0;
+#X connect 64 0 65 0;
+#X connect 65 0 69 0;
+#X connect 66 0 42 0;
+#X connect 67 0 65 1;
+#X connect 67 0 66 1;
+#X connect 68 0 67 0;

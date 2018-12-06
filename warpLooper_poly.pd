@@ -25,7 +25,7 @@
 #X obj 217 339 s step;
 #X obj 335 288 s tempo;
 #X obj 595 721 *~ 1;
-#X obj 761 656 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 717 705 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0.26 256;
 #X obj 698 801 dac~;
 #X obj 452 384 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -39,8 +39,8 @@
 #X floatatom 1249 215 5 0 0 0 - - -;
 #X floatatom 1154 222 5 0 0 0 - - -;
 #X obj 1159 183 expr $i1%2 \; $i1/2;
-#X msg 1166 281 symbol speed6;
-#X msg 1267 278 symbol phase6;
+#X msg 1166 281 symbol speed5;
+#X msg 1267 278 symbol phase5;
 #X obj 1119 246 select 0 1;
 #X msg 1205 241 set symbol speed\$1;
 #X msg 1348 244 set symbol phase\$1;
@@ -58,7 +58,7 @@
 #X floatatom 664 97 5 0 0 0 - - -;
 #X floatatom 709 97 5 0 0 0 - - -;
 #X obj 709 136 select 1 2 3;
-#X msg 633 265 symbol pitch12;
+#X msg 633 265 symbol speed11;
 #X msg 766 169 symbol phase;
 #X msg 853 173 symbol pitch;
 #X obj 636 216 pack 0 s;
@@ -131,9 +131,13 @@
 #X connect 37 0 34 0;
 #X connect 38 0 35 0;
 #X connect 39 0 24 0;
+#X connect 39 1 78 0;
 #X connect 40 0 24 0;
+#X connect 40 1 78 0;
 #X connect 41 0 24 0;
+#X connect 41 1 78 0;
 #X connect 42 0 24 0;
+#X connect 42 1 78 0;
 #X connect 43 0 44 0;
 #X connect 46 0 45 0;
 #X connect 47 0 48 0;
@@ -158,16 +162,24 @@
 #X connect 62 0 66 2;
 #X connect 63 0 67 2;
 #X connect 64 0 24 0;
+#X connect 64 1 78 0;
 #X connect 65 0 24 0;
-#X connect 66 0 78 0;
-#X connect 67 0 78 0;
+#X connect 65 1 78 0;
+#X connect 66 0 24 0;
+#X connect 66 1 78 0;
+#X connect 67 0 24 0;
+#X connect 67 1 78 0;
 #X connect 68 0 72 2;
 #X connect 69 0 73 2;
 #X connect 70 0 74 2;
 #X connect 71 0 75 2;
-#X connect 72 0 78 0;
-#X connect 73 0 78 0;
-#X connect 74 0 78 0;
-#X connect 75 0 78 0;
+#X connect 72 0 24 0;
+#X connect 72 1 78 0;
+#X connect 73 0 24 0;
+#X connect 73 1 78 0;
+#X connect 74 0 24 0;
+#X connect 74 1 78 0;
+#X connect 75 0 24 0;
+#X connect 75 1 78 0;
 #X connect 76 0 77 0;
 #X connect 78 0 26 1;
