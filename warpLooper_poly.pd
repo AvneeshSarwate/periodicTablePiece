@@ -24,17 +24,17 @@
 #X floatatom 1238 104 5 0 0 0 - - -;
 #X obj 217 339 s step;
 #X obj 335 288 s tempo;
-#X obj 712 728 *~ 1;
-#X obj 989 665 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 595 721 *~ 1;
+#X obj 761 656 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0.26 256;
 #X obj 698 801 dac~;
-#X obj 538 422 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 452 384 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 742 421 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 617 385 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 903 424 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 779 385 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1096 428 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 436 431 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X floatatom 1249 215 5 0 0 0 - - -;
 #X floatatom 1154 222 5 0 0 0 - - -;
@@ -44,10 +44,10 @@
 #X obj 1119 246 select 0 1;
 #X msg 1205 241 set symbol speed\$1;
 #X msg 1348 244 set symbol phase\$1;
-#X obj 596 450 warpLooper_sub 1 seq2.mid;
-#X obj 756 453 warpLooper_sub 2 seq2.mid;
-#X obj 949 454 warpLooper_sub 3 seq2.mid;
-#X obj 391 448 warpLooper_sub 0 seq2.mid;
+#X obj 470 411 warpLooper_sub 1 seq2.mid;
+#X obj 632 412 warpLooper_sub 2 seq2.mid;
+#X obj 289 457 warpLooper_sub 3 seq2.mid;
+#X obj 305 409 warpLooper_sub 0 seq2.mid;
 #X msg 308 690 0;
 #X obj 309 715 s allstop;
 #X obj 425 713 s allrestart;
@@ -66,32 +66,33 @@
 #X msg 635 242 set symbol \$2\$1;
 #X obj 559 261 send;
 #X obj 581 193 t f b;
-#X obj 512 486 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 612 435 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 716 485 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 777 433 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 877 488 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1046 378 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1070 492 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1216 382 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 365 512 warpLooper_sub 4 seq2.mid;
-#X obj 570 514 warpLooper_sub 5 seq2.mid;
-#X obj 730 517 warpLooper_sub 6 seq2.mid;
-#X obj 923 518 warpLooper_sub 7 seq2.mid;
-#X obj 588 510 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 465 461 warpLooper_sub 4 seq2.mid;
+#X obj 630 461 warpLooper_sub 5 seq2.mid;
+#X obj 899 407 warpLooper_sub 6 seq2.mid;
+#X obj 1069 408 warpLooper_sub 7 seq2.mid;
+#X obj 1390 383 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 792 509 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1046 430 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 953 512 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1207 433 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1146 516 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1400 437 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 441 536 warpLooper_sub 8 seq2.mid;
-#X obj 646 538 warpLooper_sub 9 seq2.mid;
-#X obj 806 541 warpLooper_sub 10 seq2.mid;
-#X obj 999 542 warpLooper_sub 11 seq2.mid;
-#X msg 337 805 64;
+#X obj 1243 409 warpLooper_sub 8 seq2.mid;
+#X obj 900 459 warpLooper_sub 9 seq2.mid;
+#X obj 1060 462 warpLooper_sub 10 seq2.mid;
+#X obj 1253 463 warpLooper_sub 11 seq2.mid;
+#X msg 338 797 64;
 #X obj 337 826 s resetpitches;
+#X obj 899 709 *~ 1;
 #X connect 0 0 10 0;
 #X connect 1 0 10 0;
 #X connect 2 0 10 0;
@@ -114,8 +115,8 @@
 #X connect 18 2 21 0;
 #X connect 20 0 33 0;
 #X connect 24 0 26 0;
-#X connect 24 0 26 1;
 #X connect 25 0 24 1;
+#X connect 25 0 78 1;
 #X connect 27 0 42 2;
 #X connect 28 0 39 2;
 #X connect 29 0 40 2;
@@ -158,13 +159,15 @@
 #X connect 63 0 67 2;
 #X connect 64 0 24 0;
 #X connect 65 0 24 0;
-#X connect 66 0 24 0;
-#X connect 67 0 24 0;
+#X connect 66 0 78 0;
+#X connect 67 0 78 0;
 #X connect 68 0 72 2;
 #X connect 69 0 73 2;
 #X connect 70 0 74 2;
 #X connect 71 0 75 2;
-#X connect 72 0 24 0;
-#X connect 73 0 24 0;
-#X connect 74 0 24 0;
-#X connect 75 0 24 0;
+#X connect 72 0 78 0;
+#X connect 73 0 78 0;
+#X connect 74 0 78 0;
+#X connect 75 0 78 0;
+#X connect 76 0 77 0;
+#X connect 78 0 26 1;
