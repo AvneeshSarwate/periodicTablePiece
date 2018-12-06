@@ -26,7 +26,7 @@
 #X obj 335 288 s tempo;
 #X obj 712 728 *~ 1;
 #X obj 989 665 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0.06 256;
+-262144 -1 -1 0.26 256;
 #X obj 698 801 dac~;
 #X obj 538 422 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -39,8 +39,8 @@
 #X floatatom 1249 215 5 0 0 0 - - -;
 #X floatatom 1154 222 5 0 0 0 - - -;
 #X obj 1159 183 expr $i1%2 \; $i1/2;
-#X msg 1166 281 symbol speed5;
-#X msg 1267 278 symbol phase5;
+#X msg 1166 281 symbol speed6;
+#X msg 1267 278 symbol phase6;
 #X obj 1119 246 select 0 1;
 #X msg 1205 241 set symbol speed\$1;
 #X msg 1348 244 set symbol phase\$1;
@@ -58,7 +58,7 @@
 #X floatatom 664 97 5 0 0 0 - - -;
 #X floatatom 709 97 5 0 0 0 - - -;
 #X obj 709 136 select 1 2 3;
-#X msg 633 265 symbol phase11;
+#X msg 633 265 symbol pitch12;
 #X msg 766 169 symbol phase;
 #X msg 853 173 symbol pitch;
 #X obj 636 216 pack 0 s;
@@ -90,6 +90,8 @@
 #X obj 646 538 warpLooper_sub 9 seq2.mid;
 #X obj 806 541 warpLooper_sub 10 seq2.mid;
 #X obj 999 542 warpLooper_sub 11 seq2.mid;
+#X msg 337 805 64;
+#X obj 337 826 s resetpitches;
 #X connect 0 0 10 0;
 #X connect 1 0 10 0;
 #X connect 2 0 10 0;
